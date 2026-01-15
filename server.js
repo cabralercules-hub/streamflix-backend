@@ -1,4 +1,4 @@
-const express = require("express");
+kkkkconst express = require("express");
 const axios = require("axios");
 const cors = require("cors");
 
@@ -47,3 +47,13 @@ app.post("/criar-pagamento", async (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log("Servidor ligado"));
+
+const fs = require("fs");
+
+function getUsers() {
+  return JSON.parse(fs.readFileSync("users.json"));
+}
+
+function saveUsers(data) {
+  fs.writeFileSync("users.json", JSON.stringify(data, null, 2));
+        }
